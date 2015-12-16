@@ -7,21 +7,27 @@ import java.util.List;
 
 
 public class BinaryTreeLevelOrderTraversal {
-	public List<List<Integer>> levelOrder(TreeNode root) {
+	public static List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> list = new ArrayList<List<Integer>>();
-        Deque<TreeNode> queue = new ArrayDeque<TreeNode>();
-        queue.push(null);
-        queue.push(root);
-        while (!queue.isEmpty()) {
+        List<TreeNode> level = new ArrayList<TreeNode>();
+        if (root == null) {
+        	return list;
+        }
+        level.add(root);
+        while (!level.isEmpty()) {
         	List<Integer> temp = new ArrayList<Integer>();
-        	TreeNode cur = queue.pop();
-        	while (cur != null || !queue.isEmpty()) {
-        		temp.add(cur.val);
-        		cur = queue.pop();
+        	List<TreeNode> nextLevel = new ArrayList<TreeNode>();
+        	for (TreeNode node: level) {
+        		temp.add(node.val);
+        		if (node.left != null) {
+        			nextLevel.add(node.left);
+        		}
+        		if (node.right != null) {
+        			nextLevel.add(node.right);
+        		}
         	}
-        	if (temp.size() > 0) {
-        		list.add(temp);
-        	}
+        	list.add(temp);
+        	level = nextLevel;
         }
         return list;
     }

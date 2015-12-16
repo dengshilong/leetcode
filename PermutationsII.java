@@ -12,10 +12,10 @@ public class PermutationsII {
         LinkedList<Integer> list = new LinkedList<Integer>();
         for (int num: temp)
         	list.add(num);
-        _permuteUnique(list, 0, res);
+        permuteUnique(list, 0, res);
         return res;
     }
-	private static void _permuteUnique( LinkedList<Integer> nums, int start, List<List<Integer>> res){
+	private static void permuteUnique( LinkedList<Integer> nums, int start, List<List<Integer>> res){
         if (start == nums.size() - 1){
             LinkedList<Integer> temp = new LinkedList<Integer>(nums);
             res.add(temp);
@@ -25,7 +25,7 @@ public class PermutationsII {
             if (i > start && nums.get(i) == nums.get(i - 1)) continue;
             nums.add(start, nums.get(i));
             nums.remove(i + 1);
-            _permuteUnique(nums, start + 1, res);
+            permuteUnique(nums, start + 1, res);
             nums.add(i + 1, nums.get(start));
             nums.remove(start);         
         }
