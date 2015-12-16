@@ -1,5 +1,5 @@
 
-public class Pow {
+public class MyPow {
 //	public static double myPow(double x, int n) {
 //        if (n == 0) 
 //        	return 1;
