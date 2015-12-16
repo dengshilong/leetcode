@@ -11,11 +11,11 @@ public class SubsetII {
         	return result;
         int[] temp = Arrays.copyOf(nums, nums.length);
         Arrays.sort(temp);
-        _subsetsWithDup(temp, 0, result, new ArrayList<Integer>());
+        subsetsWithDup(temp, 0, result, new ArrayList<Integer>());
         return result; 
     }
 	
-	private static void _subsetsWithDup(int[] nums, int start, List<List<Integer>> result, ArrayList<Integer> cur) {
+	private static void subsetsWithDup(int[] nums, int start, List<List<Integer>> result, ArrayList<Integer> cur) {
 		result.add(cur);
 		if (start == nums.length)
 			return;
@@ -23,7 +23,7 @@ public class SubsetII {
 			if(start == i || nums[i] != nums[i - 1]) {
 				ArrayList<Integer> temp = new ArrayList<Integer>(cur);
 				temp.add(nums[i]);
-				_subsetsWithDup(nums, i + 1, result, temp);
+				subsetsWithDup(nums, i + 1, result, temp);
 			}
         }
 	}

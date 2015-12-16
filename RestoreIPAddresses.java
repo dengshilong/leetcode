@@ -5,10 +5,10 @@ import java.util.List;
 public class RestoreIPAddresses {
 	public static List<String> restoreIpAddresses(String s) {
         List<String> result = new ArrayList<String>();
-        _restoreIpAddresses(s, 4, result, "");
+        restoreIpAddresses(s, 4, result, "");
         return result;
     }
-	private static void _restoreIpAddresses(String s, int n, List<String> result, String cur) {
+	private static void restoreIpAddresses(String s, int n, List<String> result, String cur) {
 		if (n == 0 && !s.equals("")) {
 			return;
 		}
@@ -31,7 +31,7 @@ public class RestoreIPAddresses {
 					continue;
 				int num = Integer.parseInt(temp);
 				if (0 <= num && num <= 255) {
-					_restoreIpAddresses(s.substring(i), n - 1, result, cur + temp + ".");
+					restoreIpAddresses(s.substring(i), n - 1, result, cur + temp + ".");
 				}
 			}
 		}
