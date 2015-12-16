@@ -1,5 +1,5 @@
 
-public class " {
+public class RemoveLinkedListElements {
 	public ListNode removeElements(ListNode head, int val) {
 		if (head == null) 
 	        return null;
