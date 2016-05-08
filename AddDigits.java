@@ -1,6 +1,6 @@
 
 public class AddDigits {
-	public static int addDigits(int num) {
+    public static int addDigits(int num) {
         if (num <= 9) {
             return num;
         } else {
@@ -11,9 +11,9 @@ public class AddDigits {
                 return res;
             }
         }   
-	}
-	public static void main(String[] args) {
-		for (int i = 1; i < 20; i++)
-			System.out.println(addDigits(i));
-	}
+    }
+    public static void main(String[] args) {
+        for (int i = 1; i < 20; i++)
+            System.out.println(addDigits(i));
+    }
 }

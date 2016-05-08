@@ -5,20 +5,20 @@
 * 
 */
 public class RemoveNthNodeFromEndOfList {
-	public static ListNode removeNthFromEnd(ListNode head, int n) {
-		 ListNode fast = head;
-		 ListNode slow = head;
-		 while (fast != null) {
-			 if (n-- < 0) {
-				 slow = slow.next;
-			 }
-			 fast = fast.next;
-		 }
-		 if (n < 0) {
-			 slow.next = slow.next.next;
-		 } else {
-			 head = head.next;
-		 }
-		 return head;
+    public static ListNode removeNthFromEnd(ListNode head, int n) {
+         ListNode fast = head;
+         ListNode slow = head;
+         while (fast != null) {
+             if (n-- < 0) {
+                 slow = slow.next;
+             }
+             fast = fast.next;
+         }
+         if (n < 0) {
+             slow.next = slow.next.next;
+         } else {
+             head = head.next;
+         }
+         return head;
     }
 }

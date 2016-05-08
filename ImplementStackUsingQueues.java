@@ -2,8 +2,8 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 public class ImplementStackUsingQueues {
-	Deque<Integer> queue = new ArrayDeque<Integer>();
-	// Push element x onto stack.
+    Deque<Integer> queue = new ArrayDeque<Integer>();
+    // Push element x onto stack.
     public void push(int x) {
         queue.addFirst(x);
     }
@@ -15,21 +15,21 @@ public class ImplementStackUsingQueues {
 
     // Get the top element.
     public int top() {
-    	int e = queue.getFirst();
-    	return e;
+        int e = queue.getFirst();
+        return e;
         
     }
 
     // Return whether the stack is empty.
     public boolean empty() {
-    	return queue.isEmpty();    
+        return queue.isEmpty();    
     }
     public static void main(String[] args) {
-    	MyStack stack = new MyStack();
-    	stack.push(1);
-    	stack.push(2);
-    	System.out.println(stack.top());
-    	stack.pop();
-    	System.out.println(stack.top());
+        MyStack stack = new MyStack();
+        stack.push(1);
+        stack.push(2);
+        System.out.println(stack.top());
+        stack.pop();
+        System.out.println(stack.top());
     }
 }

@@ -5,17 +5,17 @@ import java.util.List;
 
 
 public class PermutationsII {
-	public static List<List<Integer>> permuteUnique(int[] nums) {
+    public static List<List<Integer>> permuteUnique(int[] nums) {
         List<List<Integer>> res = new ArrayList<List<Integer>>();
         int[] temp = Arrays.copyOf(nums, nums.length);
         Arrays.sort(temp);
         LinkedList<Integer> list = new LinkedList<Integer>();
         for (int num: temp)
-        	list.add(num);
+            list.add(num);
         permuteUnique(list, 0, res);
         return res;
     }
-	private static void permuteUnique( LinkedList<Integer> nums, int start, List<List<Integer>> res){
+    private static void permuteUnique( LinkedList<Integer> nums, int start, List<List<Integer>> res){
         if (start == nums.size() - 1){
             LinkedList<Integer> temp = new LinkedList<Integer>(nums);
             res.add(temp);
@@ -30,23 +30,23 @@ public class PermutationsII {
             nums.remove(start);         
         }
     }
-	public static void swap(int[] nums, int i, int j) {
-		int temp = nums[i];
-		nums[i] = nums[j];
-		nums[j] = temp;
-	}
-	public static void main(String[] args) {
-		int[] nums = {1,1,2,1};
-		//int[] nums = {3,3,1,2,3,2,3,1};
-		List<List<Integer>> result = permuteUnique(nums);
-		for (List<Integer> list: result) {
-			for (Integer i: list) {
-				System.out.print(i);
-			}
-			System.out.println("");
-		}
-		for (int i = 0; i < nums.length; i++) {
-			System.out.print(" " + nums[i]);
-		}
-	}
+    public static void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+    public static void main(String[] args) {
+        int[] nums = {1,1,2,1};
+        //int[] nums = {3,3,1,2,3,2,3,1};
+        List<List<Integer>> result = permuteUnique(nums);
+        for (List<Integer> list: result) {
+            for (Integer i: list) {
+                System.out.print(i);
+            }
+            System.out.println("");
+        }
+        for (int i = 0; i < nums.length; i++) {
+            System.out.print(" " + nums[i]);
+        }
+    }
 }
