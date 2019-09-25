@@ -17,7 +17,7 @@ def create_node_list(nums):
     return head
 
 
-def print_node_list(head):
+def node_list_to_list(head):
     result = []
     cur = head
     while cur != None:

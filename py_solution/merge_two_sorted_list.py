@@ -1,4 +1,4 @@
-from py_solution.common import create_node_list, print_node_list
+from py_solution.common import create_node_list, node_list_to_list
 
 
 class Solution(object):
@@ -41,7 +41,7 @@ if __name__ == "__main__":
     l2 = create_node_list([1, 3, 4])
     solution = Solution()
     res = solution.mergeTwoLists(l1, l2)
-    assert print_node_list(res) == [1, 1, 2, 3, 4, 4]
+    assert node_list_to_list(res) == [1, 1, 2, 3, 4, 4]
     res = solution.mergeTwoLists(create_node_list([1, 2, 3]), create_node_list([]))
-    assert print_node_list(res) == [1, 2, 3]
+    assert node_list_to_list(res) == [1, 2, 3]
 
