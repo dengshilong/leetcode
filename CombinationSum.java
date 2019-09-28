@@ -7,8 +7,8 @@ public class CombinationSum {
     public static List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         List<Integer> comb = new ArrayList<Integer>();
-         int[] temp = Arrays.copyOf(candidates, candidates.length);
-         Arrays.sort(temp);
+        int[] temp = Arrays.copyOf(candidates, candidates.length);
+        Arrays.sort(temp);
         combinationSum(temp, target, 0, result, comb);
         return result;
     }
