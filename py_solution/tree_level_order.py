@@ -1,4 +1,9 @@
 class Solution(object):
+    def levelOrderBottom(self, root):
+        res = self.levelOrder(root)
+        res.reverse()
+        return res
+
     def levelOrder(self, root):
         """
         :type root: TreeNode
@@ -18,6 +23,7 @@ class Solution(object):
                     temp.append(r.right)
             level = temp
         return res
+
 
 if __name__ == "__main__":
     pass
