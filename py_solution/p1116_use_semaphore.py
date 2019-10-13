@@ -51,9 +51,9 @@ def printNumber(x):
 if __name__ == "__main__":
     n = 3
     foo = ZeroEvenOdd(n)
-    zero = threading.Thread(target=foo.zero(printNumber), name='zero')
-    even = threading.Thread(target=foo.even(printNumber), name='even')
-    odd = threading.Thread(target=foo.odd(printNumber), name='odd')
+    zero = threading.Thread(target=foo.zero, args=(printNumber,))
+    even = threading.Thread(target=foo.even, args=(printNumber,))
+    odd = threading.Thread(target=foo.odd, args=(printNumber,))
     zero.start()
     even.start()
     odd.start()

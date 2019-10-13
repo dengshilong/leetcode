@@ -51,9 +51,9 @@ def printThird():
 
 if __name__ == "__main__":
     foo = Foo()
-    a = threading.Thread(target=foo.first(printFirst), name='one')
-    b = threading.Thread(target=foo.second(printSecond), name='two')
-    c = threading.Thread(target=foo.third(printThird), name='three')
+    a = threading.Thread(target=foo.first, args=(printFirst,))
+    b = threading.Thread(target=foo.second, args=(printSecond,))
+    c = threading.Thread(target=foo.third, args=(printThird,))
     c.start()
     b.start()
     a.start()

@@ -46,11 +46,9 @@ def printBar():
 if __name__ == "__main__":
     n = 10
     foo_bar = FooBar(n)
-    foo = threading.Thread(target=foo_bar.foo(printFoo), name='foo')
-    bar = threading.Thread(target=foo_bar.bar(printBar), name='bar')
-    # foo.start()
-    # bar.start()
-    foo.run()
-    bar.run()
+    foo = threading.Thread(target=foo_bar.foo, args=(printFoo,))
+    bar = threading.Thread(target=foo_bar.bar, args=(printBar,))
+    foo.start()
+    bar.start()
     foo.join()
     bar.join()

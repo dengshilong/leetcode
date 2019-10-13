@@ -66,3 +66,32 @@ class FizzBuzz(object):
 
 def printNumber(x):
     print(str(x))
+
+
+def printFizz():
+    print("fizz")
+
+
+def printBuzz():
+    print("buzz")
+
+
+def printFizzBuzz():
+    print("fizzbuzz")
+
+
+if __name__ == "__main__":
+    n = 15
+    foo = FizzBuzz(n)
+    fizz = threading.Thread(target=foo.fizz, args=(printFizz,))
+    buzz = threading.Thread(target=foo.buzz, args=(printBuzz,))
+    fizz_buzz = threading.Thread(target=foo.fizzbuzz, args=(printFizzBuzz,))
+    number = threading.Thread(target=foo.number, args=(printNumber,))
+    fizz.start()
+    buzz.start()
+    fizz_buzz.start()
+    number.start()
+    fizz.join()
+    buzz.join()
+    fizz_buzz.join()
+    number.join()
